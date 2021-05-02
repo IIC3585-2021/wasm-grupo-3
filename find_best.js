@@ -46,7 +46,6 @@ Module().then(function(mymod) {
     find_best_btn.onclick = () => {
         n_nodes = n_nodes.value;
         console.log(graph_matrix);
-        console.log("Hice click, ayuda");
         let ptrMatrix = matrixToPtr(mymod);
         let ptrArray = arrayToPtr(mymod);
         let startTime = window.performance.now();
@@ -56,8 +55,8 @@ Module().then(function(mymod) {
         console.log("Costo: ", findBestResult);
         let endTime = window.performance.now();
         console.log("Tiempo final:", endTime);
-        let resultPath = ptrToArray(mymod, ptrArray);
-        console.log("Arreglo:", resultPath);
-        // Función que me cambia la ruta 
+        route = ptrToArray(mymod, ptrArray);
+        console.log("Arreglo:", route);
+        getBestRoute();
     }
 })

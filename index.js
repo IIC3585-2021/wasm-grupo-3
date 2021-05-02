@@ -1,27 +1,27 @@
 /* Variables HTML */
-var container = document.getElementById('graph');
-var n_nodes = document.getElementById('n_nodes');
-var from = document.getElementById('node1');
-var to = document.getElementById('node2');
-var cost = document.getElementById('value');
+let container = document.getElementById('graph');
+let n_nodes = document.getElementById('n_nodes');
+let from = document.getElementById('node1');
+let to = document.getElementById('node2');
+let cost = document.getElementById('value');
 
 /* Variables Grafo */
-var nodes = new vis.DataSet({})
-var edges = new vis.DataSet({});
-var network = null;
-var data = {
+let nodes = new vis.DataSet({})
+let edges = new vis.DataSet({});
+let network = null;
+let data = {
     nodes: nodes,
     edges: edges,
 };
-var options = {
+let options = {
     width: '500px',
     height: '500px',
 };
 
 /* Variables Función */
 const matrix = (rows, cols) => new Array(cols).fill(-1).map((o, i) => new Array(rows).fill(-1));
-var graph_matrix = null;
-var route = [];
+let graph_matrix = null;
+let route = [];
 
 /* Obtener la cantidad de nodos */
 const get_nodes = () => {
@@ -45,7 +45,17 @@ const create_graph = (n_nodes) => {
 
 /* Agregar conexión al grafo */
 const add_conexion = () => {
-    edges.add({ from: from.value, to: to.value, label: cost.value });
+    edges.add({ from: parseInt(from.value), to: parseInt(to.value), label: cost.value });
     graph_matrix[from.value][to.value] = parseInt(cost.value);
     graph_matrix[to.value][from.value] = parseInt(cost.value);
+};
+
+/* Dibujar la ruta más corta */
+const getBestRoute = () => {
+  let edge, direction;
+  for (let index = 0; index < route.length - 1; index++) {
+    edge = edges.get({ filter: (item) => {return (item.from == route[index + 1] && item.to == route[index]) || (item.from == route[index] && item.to == route[index + 1])}})[0];
+    direction = edge.from == route[index] ? "to" : "from"; 
+    edges.update({id: edge.id, label: edge.label, from: edge.from, to: edge.to, arrows: direction, color: { color: "green" }})
+  }
 };
