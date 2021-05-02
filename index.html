@@ -1,12 +1,32 @@
 <!doctype html>
     <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="style.css" />
         <title>Grupo 3 - Tarea 3</title>
     </head>
 
     <body>
-        <div id="graph"></div>
+        <p id= "title"> Tarea Wasp - Grupo 3 </p>
+        <div id= "nodes">
+            <label for="n_nodes"> Cantidad de Nodos:</label>
+            <input id="n_nodes" type="number"/>
+            <button onclick={get_nodes()}>Crear Grafo</button>
+        </div>
+
+        <div id= "panel"> 
+            <label for="node1"> Nodo 1:</label>
+            <input id="node1" type="text"/>
+            <label for="node2"> Nodo 2:</label>
+            <input id="node2" type="text"/>
+            <label for="value"> Costo:</label>
+            <input id="value" type="number"/>
+            <button onclick={add_conexion()}>Agregar Arista</button>
+        </div>
+        <button id="find_best">Calcular Ruta más Corta </button>
+
+        <div id="graph"></div> 
         <script type="text/javascript" src="./node_modules/vis/dist/vis.js"></script>
         <script src="index.js"></script>
+       
     </body>
 </html>
