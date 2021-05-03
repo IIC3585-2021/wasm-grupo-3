@@ -15,4 +15,4 @@
 ## Fuentes: 
 
 * Dibujar Grafos: Vis.js. https://visjs.org/index.html
-
+* Código original función `travllingSalesmanProblem`: https://www.geeksforgeeks.org/traveling-salesman-problem-tsp-implementation/

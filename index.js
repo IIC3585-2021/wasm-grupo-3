@@ -31,6 +31,7 @@ let route = []
 
 /* Obtener la cantidad de nodos */
 createGraphBtn.onclick = () => {
+
   if (!nNodes.value || nNodes.value <= 1) {
     alert('Ingresa una cantidad de nodos válida')
   } else {
