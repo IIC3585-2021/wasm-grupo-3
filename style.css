@@ -1,10 +1,12 @@
-#title {
-    font-size: 30px;
+div.vis-network { 
+    border: solid black 1px;
 }
-#graph { 
-    display: flex;
 
-};
+#panel{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
 
 div{
     margin: 5px;
