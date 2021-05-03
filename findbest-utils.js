@@ -36,10 +36,8 @@ Module().then(function(mymod) {
         const ptrMatrix = matrixToPtr(mymod)
         const ptrArray = arrayToPtr(mymod)
         const startTime = window.performance.now()
-        console.log(startTime);
         const findBestResult = mymod._findbest(ptrMatrix, ptrArray, parseInt(nNodes))
         const endTime = window.performance.now()
-        console.log(endTime);
         route = ptrToArray(mymod, ptrArray)
         getBestRoute(findBestResult, startTime, endTime)
     }

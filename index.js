@@ -1,6 +1,5 @@
 /* Variables HTML */
 const container = document.getElementById('graph')
-    // eslint-disable-next-line prefer-const
 let nNodes = document.getElementById('nNodes')
 const from = document.getElementById('node1')
 const to = document.getElementById('node2')
@@ -28,23 +27,24 @@ const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M
 /* Variables Función */
 const matrix = (rows, cols) => new Array(cols).fill(-1).map((o, i) => new Array(rows).fill(-1))
 let graphMatrix = null
-    // eslint-disable-next-line prefer-const
 let route = []
 
 /* Obtener la cantidad de nodos */
 createGraphBtn.onclick = () => {
-    if (!nNodes.value || nNodes.value <= 1) {
-        alert('Ingresa una cantidad de nodos válida')
-    } else {
-        createGraph(nNodes.value)
-        nNodes.disabled = true
-        graphPanel.hidden = false
-        from.disabled = false
-        to.disabled = false
-        cost.disabled = false
-        addEdgeBtn.disabled = false
-        findBestBtn.disabled = false
-    }
+
+  if (!nNodes.value || nNodes.value <= 1) {
+    alert('Ingresa una cantidad de nodos válida')
+  } else {
+    createGraph(nNodes.value)
+    nNodes.disabled = true
+    graphPanel.hidden = false
+    from.disabled = false
+    to.disabled = false
+    cost.disabled = false
+    addEdgeBtn.disabled = false
+    findBestBtn.disabled = false
+    createGraphBtn.disabled = true
+  }
 }
 
 /* Creo la matriz que va a contener el grafo y el objeto que se muestra */
@@ -73,6 +73,8 @@ const getBestRoute = (value, startTime, endTime) => {
     from.disabled = true
     to.disabled = true
     cost.disabled = true
+    findBestBtn.disabled = true
+    addEdgeBtn.disabled = true
     if (value === 2147483647) {
         alert('No hay ruta que recorra todos los nodos :(')
     } else {
