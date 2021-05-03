@@ -72,6 +72,7 @@ const getBestRoute = (value, startTime, endTime) => {
     from.disabled = true
     to.disabled = true
     cost.disabled = true
+    findBestBtn.disabled = true
     if (value === 2147483647) {
         alert('No hay ruta que recorra todos los nodos :(')
     } else {
