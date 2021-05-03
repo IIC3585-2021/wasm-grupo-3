@@ -1,0 +1,14 @@
+div.vis-network { 
+    border: solid black 1px;
+}
+
+#panel{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+div{
+    margin: 5px;
+    padding: 5px
+};

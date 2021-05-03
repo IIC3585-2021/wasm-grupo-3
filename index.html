@@ -1,0 +1,42 @@
+<!doctype html>
+    <html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <title>Grupo 3 - Tarea 3</title>
+    </head>
+
+    <body>
+        <h1 id= "title"> Tarea Wasm - Grupo 3 </h1>
+        <div id= "nodes">
+            <label for="nNodes"> Cantidad de Nodos:</label>
+            <input id="nNodes" type="number" min="2"/>
+            <button id="createGraphBtn">Crear Grafo</button>
+        </div>
+
+        <div> 
+            <label for="node1"> Nodo 1:</label>
+            <input id="node1" type="text" disabled=true/>
+            <label for="node2"> Nodo 2:</label>
+            <input id="node2" type="text" disabled=true/>
+            <label for="value"> Costo:</label>
+            <input id="value" type="number" min='1'disabled=true/>
+            <button id="addEdgeBtn" disabled=true>Agregar Arista</button>
+        </div>
+        <button id="findBestBtn" disabled=true>Calcular Ruta más Corta </button>
+
+        <div id="panel">
+            <div id="graph" hidden=true></div> 
+            <div id="resultPanel" hidden=true>
+                <h2>Resultados: </h2>
+                <p id="bestRoute"> </p>
+                <p id="costRoute"> </p>
+                <p id="time"></p>
+            </div>
+        </div>
+        
+        <script type="text/javascript" src="./node_modules/vis/dist/vis.js"></script>
+        <script src="index.js"></script>
+        <script async type="module" src="findbest-utils.js"></script>
+       
+    </body>
+</html>
