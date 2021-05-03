@@ -41,6 +41,7 @@ createGraphBtn.onclick = () => {
     graphPanel.hidden = false
     from.disabled = false
     to.disabled = false
+    cost.disabled = false
     addEdgeBtn.disabled = false
     findBestBtn.disabled = false
   }
