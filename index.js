@@ -1,6 +1,5 @@
 /* Variables HTML */
 const container = document.getElementById('graph')
-// eslint-disable-next-line prefer-const
 let nNodes = document.getElementById('nNodes')
 const from = document.getElementById('node1')
 const to = document.getElementById('node2')
@@ -28,7 +27,6 @@ const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M
 /* Variables Función */
 const matrix = (rows, cols) => new Array(cols).fill(-1).map((o, i) => new Array(rows).fill(-1))
 let graphMatrix = null
-// eslint-disable-next-line prefer-const
 let route = []
 
 /* Obtener la cantidad de nodos */
@@ -44,6 +42,7 @@ createGraphBtn.onclick = () => {
     cost.disabled = false
     addEdgeBtn.disabled = false
     findBestBtn.disabled = false
+    createGraphBtn.disabled = true
   }
 }
 
@@ -71,6 +70,8 @@ const getBestRoute = (value, startTime, endTime) => {
   from.disabled = true
   to.disabled = true
   cost.disabled = true
+  addEdgeBtn.disabled = true
+  findBestBtn.disabled = true
   if (value === 2147483647) {
     alert('No hay ruta que recorra todos los nodos :(')
   } else {
